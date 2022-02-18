@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>商材、サービス分析ツール</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <style>
+        table,
+        td {
+            /* border: 1px solid #333; */
+            /* border-collapse: collapse; */
+            white-space: normal;
+            margin: auto;
+        }
+
+        thead,
+        tfoot {
+            background-color: #333;
+            color: #fff;
+        }
+
+        div {
+            text-align: center;
+            /* スクロールに対してページングボックスの位置を固定 */
+            /* position: fixed;  */
+            /* 位置を指定 */
+            bottom: 0;
+            right: 45%;
+            background: #FFF;
+        }
+
+        th,
+        td {
+            border: solid 1px;
+            width: auto;
+        }
+
+        tr {
+            border: solid 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <a name="top" id="top"></a>
+    <div class="container">
+        <!-- contents_wrap_bg -->
+        <div class="contents_wrap_bg">
+            <!-- contents_wrap -->
+            <div class="contents_wrap">
+                <!-- main_content -->
+                <div class="main_content">
+                    <div class=" input_wrap">
+                        <h1>検索数取得ツール</h1>
+                        <p>これは、商材、サービス別に検索数を調べることができるキーワード検索数調査ツールです。</p>
+                        <form id="form">
+                            <label>キーワード: <input type="text" name="text" id="textBox1"></label>
+                            <br><br>
+                            <button type="submit" id="searchButton">Check！！</button>
+                        </form>
+                        <p>
+                        <table id='data-table'>
+                            <thead>
+                                <tr>
+                                    <!-- <th>対象サイト</th>
+                                    <th>ヒット数</th> -->
+                                </tr>
+                            </thead>
+                            <tbody id="data">
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </p>
+                        <ul class="input_list">
+                            <p id="log"></p>
+                        </ul>
+                        <table id='detail'>
+                            <thead>
+                                <tr>
+
+                                </tr>
+                            </thead>
+                        </table>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- main_content -->
+        </div>
+        <!-- contents_wrap -->
+    </div>
+    <!-- contents_wrap_bg -->
+    </div>
+    <!-- container -->
+    <footer>
+    </footer>
+
+    <!-- submitイベント処理をキャンセル -->
+    <!-- nodeバージョンの CDNを読み込めないか -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="./api.js"></script>
+    <script src="./index6.js"></script>
+    <script>
+        var table = document.getElementById('data-table');
+
+
+    </script>
+
+</body>
+
+</html>
