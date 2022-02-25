@@ -1,17 +1,18 @@
+<!-- //backup file作成　index.html index.js -->
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
+<head style="background-color:grey">
     <meta charset="utf-8">
     <title>商材、サービス分析ツール</title>
-    <script src="https://apis.google.com/js/api.js"></script>
     <style>
         table,
         td {
-            /* border: 1px solid #333; */
-            /* border-collapse: collapse; */
+            border: 1px solid #333;
+            border-collapse: collapse;
             white-space: normal;
             margin: auto;
+            padding: 10px;
         }
 
         thead,
@@ -33,83 +34,97 @@
         th,
         td {
             border: solid 1px;
-            width: auto;
+            width: 50%;
         }
 
         tr {
             border: solid 1px;
+            width: 100%;
+        }
+
+
+
+
+        table #detail {
+            width: 25%;
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
     <a name="top" id="top"></a>
     <div class="container">
-        <!-- contents_wrap_bg -->
-        <div class="contents_wrap_bg">
-            <!-- contents_wrap -->
-            <div class="contents_wrap">
-                <!-- main_content -->
-                <div class="main_content">
-                    <div class=" input_wrap">
-                        <h1>検索数取得ツール</h1>
-                        <p>これは、商材、サービス別に検索数を調べることができるキーワード検索数調査ツールです。</p>
-                        <form id="form">
-                            <label>キーワード: <input type="text" name="text" id="textBox1"></label>
-                            <br><br>
-                            <button type="submit" id="searchButton">Check！！</button>
-                        </form>
-                        <p>
-                        <table id='data-table'>
-                            <thead>
-                                <tr>
-                                    <!-- <th>対象サイト</th>
-                                    <th>ヒット数</th> -->
-                                </tr>
-                            </thead>
-                            <tbody id="data">
-                                <tr>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </p>
-                        <ul class="input_list">
-                            <p id="log"></p>
-                        </ul>
-                        <table id='detail'>
-                            <thead>
-                                <tr>
-
-                                </tr>
-                            </thead>
-                        </table>
-
-
+        <!-- main_content -->
+        <div class="main_content">
+            <div class="row">
+                <h1>検索数取得ツール</h1>
+                <p>これは、商材、サービス別に検索数を調べることができるキーワード検索数調査ツールです。</p>
+                <form id="form">
+                    <label>キーワード: <input type="text" name="text" id="textBox1"></label>
+                    <br><br>
+                    <button type="submit" id="searchButton" onclick="OnButtonClick();">Check!!</button>
+                </form>
+                <div class="col-sm w-20">
+                    <table id="data-table" class="table table-bordered table-responsive table-hover ">
+                        <thead>
+                            <tr class="collapse">
+                                <th>対象サイト</th>
+                                <th>ヒット数</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <ul class="input_list">
+                        <p id="log"></p>
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm w-20 mx-auto">
+                            <table id='detail' class="table table-bordered table-responsive table-hover  "
+                                style="width:696px;height:222px">
+                                <thead>
+                                    <tr class="collapse">
+                                        <th>対象サイト</th>
+                                        <th>タイトル</th>
+                                        <th>URL</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
                     </div>
-
                 </div>
+
+
             </div>
-            <!-- main_content -->
+
+
         </div>
-        <!-- contents_wrap -->
+
+    </div>
+    <!-- main_content -->
+    <!-- contents_wrap -->
     </div>
     <!-- contents_wrap_bg -->
     </div>
     <!-- container -->
-    <footer>
+    <footer style="background-color:grey">
     </footer>
 
     <!-- submitイベント処理をキャンセル -->
     <!-- nodeバージョンの CDNを読み込めないか -->
     <script src="https://apis.google.com/js/api.js"></script>
-    <script src="./api.js"></script>
-    <script src="./index6.js"></script>
-    <script>
-        var table = document.getElementById('data-table');
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./apiConst.js"></script>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     </script>
-
+    <script>
+        function OnButtonClick() {
+            $('.collapse').collapse()
+        }</script>
 </body>
 
 </html>
